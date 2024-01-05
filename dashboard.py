@@ -55,7 +55,7 @@ try:
 
     with col1:
         date1 = pd.to_datetime(st.date_input("Start date", startDate))
-    with col2:
+    with col1:
         date2 = pd.to_datetime(st.date_input("End date", endDate))
 
     # Check if the entered dates are within the calculated range
