@@ -90,7 +90,7 @@ try:
 
     category_df = df.groupby(by=['Category'], as_index=False)["Sales"].sum()
 
-    with col1:
+    with col2:
         st.subheader("Sales by category")
         fig = px.bar(category_df, x="Category", y="Sales", text=['${:,.2f}'.format(x) for x in category_df["Sales"]],
                      template="seaborn")
