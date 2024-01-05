@@ -46,16 +46,15 @@ else:
     df = pd.read_excel("Superstore.xls")
 
 try:
-    date1 = pd.to_datetime(st.date_input("Start date", startDate))
-    date2 = pd.to_datetime(st.date_input("End date", endDate))
-    col1, col2 = st.columns((2))
     df["Order Date"] = pd.to_datetime(df["Order Date"])
     
     # getting min and max date
     startDate = pd.to_datetime(df["Order Date"]).min()
     endDate = pd.to_datetime(df["Order Date"]).max()
-
-
+    date1 = pd.to_datetime(st.date_input("Start date", startDate))
+    date2 = pd.to_datetime(st.date_input("End date", endDate))
+    
+    col1, col2 = st.columns((2))
     # Check if the entered dates are within the calculated range
     if startDate <= date1 <= endDate and startDate <= date2 <= endDate:
         df = df[(df["Order Date"] > date1) & (df["Order Date"] < date2)].copy()
