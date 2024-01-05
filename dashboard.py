@@ -54,7 +54,6 @@ try:
     date1 = pd.to_datetime(st.date_input("Start date", startDate))
     date2 = pd.to_datetime(st.date_input("End date", endDate))
     
-    col1, col2 = st.columns((2))
     # Check if the entered dates are within the calculated range
     if startDate <= date1 <= endDate and startDate <= date2 <= endDate:
         df = df[(df["Order Date"] > date1) & (df["Order Date"] < date2)].copy()
@@ -87,6 +86,7 @@ try:
 
     category_df = df.groupby(by=['Category'], as_index=False)["Sales"].sum()
 
+    col1, col2 = st.columns((2))
     with col1:
         st.subheader("Sales by category")
         fig = px.bar(category_df, x="Category", y="Sales", text=['${:,.2f}'.format(x) for x in category_df["Sales"]],
