@@ -53,10 +53,9 @@ try:
     startDate = pd.to_datetime(df["Order Date"]).min()
     endDate = pd.to_datetime(df["Order Date"]).max()
 
-    with col1:
-        date1 = pd.to_datetime(st.date_input("Start date", startDate))
-    with col1:
-        date2 = pd.to_datetime(st.date_input("End date", endDate))
+    
+    date1 = pd.to_datetime(st.date_input("Start date", startDate))
+    date2 = pd.to_datetime(st.date_input("End date", endDate))
 
     # Check if the entered dates are within the calculated range
     if startDate <= date1 <= endDate and startDate <= date2 <= endDate:
