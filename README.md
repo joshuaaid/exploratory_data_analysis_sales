@@ -24,6 +24,12 @@ This repository contains a Streamlit app for conducting Exploratory Data Analysi
 5. **Analysis Sections**: Explore different sections of the dashboard, including sales by category, sales by region, time series analysis, and more.
 6. **Download Results**: In each section, you can download the analyzed data by clicking the "Download data" button.
 
+## Preview
+You can check the link below to test the application.
+
+https://exploratorydataanalysissales.streamlit.app/
+
+
 ## Data Collection
 
 The uploaded data is not stored or reused. The app is designed to provide on-the-fly analysis without retaining any user data.
